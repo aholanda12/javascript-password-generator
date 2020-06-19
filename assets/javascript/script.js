@@ -21,6 +21,8 @@ lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n
 uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 numeric = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 special = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
+
+function generatePassword() { 
 // THEN I am presented with a series of prompts for password criteria
 // 
 // WHEN prompted for password criteria
@@ -48,12 +50,12 @@ else {
   if (!confirmLowercase && !confirmUppercase && !confirmNumeric && !confirmSpecial) {
       choices = alert("No character type chosen. Please try again.");
 
-  }
+}
 
   else if (confirmLowercase && confirmUppercase && confirmNumeric && confirmSpecial) {
 
       choices = lowercase.concat(uppercase, numeric, special);
-  }
+}
 
   else if (!confirmLowercase && confirmUppercase && confirmNumeric && confirmSpecial) {
 
@@ -99,17 +101,19 @@ else {
 
   else if (confirmLowercase && !confirmUppercase && !confirmNumeric && !confirmSpecial) {
       choices = lowercase;
-  }
+}
+
   else if (!confirmLowercase && confirmUppercase && !confirmNumeric && !confirmSpecial) {
       choices = uppercase;
-  }
+}
+
   else if (!confirmLowercase && !confirmUppercase && confirmNumeric && !confirmSpecial) {
       choices = numeric;
-  }
-  // Created space variable to fill uppercase conversion
+}
+
   else if (!confirmLowercase && !confirmUppercase && !confirmNumeric && confirmSpecial) {
       choices = special;
-  }
+}
 // 4 confirms
 // WHEN prompted for character types to include in the password
 // THEN I choose lowercase, uppercase, numeric, and/or special characters
@@ -117,6 +121,18 @@ else {
 // Confirm needed and ask the user if they want to use uppercase
 // Confirm needed and ask the user if they want to use numeric
 // Confirm needed and ask the user if they want to use special characters
+var password = [];
+var finalProduct = "";
+
+for (var i = 0; i < enter; i++) {
+  var randomized = choices[Math.floor(Math.random() * choices.length)];
+  password.push(randomized);
+}
+
+finalProduct = password.join("");
+console.log(finalProduct);
+return finalProduct;
+}
 
 // Need a function
 // WHEN I answer each prompt
