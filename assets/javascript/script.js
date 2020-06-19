@@ -7,6 +7,20 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
+
+}
+
+var enter;
+var confirmLowercase;
+var confirmUppercase;
+var confirmNumeric;
+var confirmSpecial;
+var choices;
+
+lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+numeric = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+special = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
 // THEN I am presented with a series of prompts for password criteria
 // 
 // WHEN prompted for password criteria
@@ -17,6 +31,7 @@ function writePassword() {
 // THEN I choose a length of at least 8 characters and no more than 128 characters
 // Prompt needed and ask for the length
 // check IF the input number is < 8 and > 128
+// function to convert the string into a number
 
 
 // 4 confirms
@@ -32,6 +47,9 @@ function writePassword() {
 // THEN my input should be validated and at least one character type should be selected
 // Each prompt needs to be validated
 
+// collected data here
+// using the number from above and the 4 booleans
+
 
 // WHEN all prompts are answered
 // THEN a password is generated that matches the selected criteria
@@ -41,8 +59,6 @@ function writePassword() {
 
 // WHEN the password is generated
 // THEN the password is either displayed in an alert or written to the page
-}
-
 
 // GIVEN I need a new, secure password
 // WHEN I click the button to generate a password
