@@ -27,6 +27,20 @@ special = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/",
 // THEN I select which criteria to include in the password
 // WHEN prompted for the length of the password
 
+enter = parseInt(prompt("How long would you like the password to be? Please choose between 8 and 128."));
+if (enter <= 128 && enter >= 8) {
+  confirmLowercase = confirm("Will this contain lowercase letters?");
+  confirmUppercase = confirm("Will this contain UPPERCASE letters?");
+  confirmNumeric = confirm("Will this contain numbers?");
+  confirmSpecial = confirm("Will this contain special characters?");
+}
+
+else {
+  enter = parseInt(prompt("Invalid response. Please choose between 8 and 128."));
+}
+
+
+
 // 1 PROMPT needs validation
 // THEN I choose a length of at least 8 characters and no more than 128 characters
 // Prompt needed and ask for the length
