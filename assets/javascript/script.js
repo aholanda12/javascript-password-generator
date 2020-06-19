@@ -109,7 +109,7 @@ else {
   // Created space variable to fill uppercase conversion
   else if (!confirmLowercase && !confirmUppercase && !confirmNumeric && confirmSpecial) {
       choices = special;
-  };
+  }
 // 4 confirms
 // WHEN prompted for character types to include in the password
 // THEN I choose lowercase, uppercase, numeric, and/or special characters
