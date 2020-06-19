@@ -30,16 +30,15 @@ function generatePassword() {
 // WHEN prompted for the length of the password
 
 enter = parseInt(prompt("How long would you like the password to be? Please choose between 8 and 128."));
-if (enter <= 128 && enter >= 8) {
-  confirmLowercase = confirm("Will this contain lowercase letters?");
-  confirmUppercase = confirm("Will this contain UPPERCASE letters?");
-  confirmNumeric = confirm("Will this contain numbers?");
-  confirmSpecial = confirm("Will this contain special characters?");
+
+while (enter < 8 || enter > 128) {
+  enter = parseInt(prompt("Invalid length! Please choose between 8 and 128."));
 }
 
-else {
-  enter = parseInt(prompt("Invalid response. Please choose between 8 and 128."));
-}
+confirmLowercase = confirm("Will this contain lowercase letters?");
+confirmUppercase = confirm("Will this contain UPPERCASE letters?");
+confirmNumeric = confirm("Will this contain numbers?");
+confirmSpecial = confirm("Will this contain special characters?");
 
 // 1 PROMPT needs validation
 // THEN I choose a length of at least 8 characters and no more than 128 characters
