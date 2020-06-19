@@ -39,15 +39,77 @@ else {
   enter = parseInt(prompt("Invalid response. Please choose between 8 and 128."));
 }
 
-
-
 // 1 PROMPT needs validation
 // THEN I choose a length of at least 8 characters and no more than 128 characters
 // Prompt needed and ask for the length
 // check IF the input number is < 8 and > 128
 // function to convert the string into a number
 
+  if (!confirmLowercase && !confirmUppercase && !confirmNumeric && !confirmSpecial) {
+      choices = alert("No character type chosen. Please try again.");
 
+  }
+
+  else if (confirmLowercase && confirmUppercase && confirmNumeric && confirmSpecial) {
+
+      choices = lowercase.concat(uppercase, numeric, special);
+  }
+
+  else if (!confirmLowercase && confirmUppercase && confirmNumeric && confirmSpecial) {
+
+    choices = uppercase.concat(numeric, special);
+}
+  else if (confirmLowercase && !confirmUppercase && confirmNumeric && confirmSpecial) {
+
+    choices = lowercase.concat(numeric, special);
+}
+  else if (confirmLowercase && confirmUppercase && !confirmNumeric && confirmSpecial) {
+
+    choices = lowercase.concat(uppercase, special);
+}
+  else if (confirmLowercase && confirmUppercase && confirmNumeric && !confirmSpecial) {
+
+    choices = lowercase.concat(uppercase, numeric);
+}
+
+  else if (!confirmLowercase && !confirmUppercase && confirmNumeric && confirmSpecial) {
+
+    choices = numeric.concat(special);
+}
+  else if (!confirmLowercase && confirmUppercase && !confirmNumeric && confirmSpecial) {
+
+    choices = uppercase.concat(special);
+}
+  else if (!confirmLowercase && confirmUppercase && confirmNumeric && !confirmSpecial) {
+
+    choices = uppercase.concat(numeric);
+}
+  else if (confirmLowercase && !confirmUppercase && !confirmNumeric && confirmSpecial) {
+
+    choices = lowercase.concat(special);
+}
+   else if (confirmLowercase && !confirmUppercase && confirmNumeric && !confirmSpecial) {
+
+    choices = lowercase.concat(numeric);
+}
+  else if (confirmLowercase && confirmUppercase && !confirmNumeric && !confirmSpecial) {
+
+    choices = lowercase.concat(uppercase);
+}
+
+  else if (confirmLowercase && !confirmUppercase && !confirmNumeric && !confirmSpecial) {
+      choices = lowercase;
+  }
+  else if (!confirmLowercase && confirmUppercase && !confirmNumeric && !confirmSpecial) {
+      choices = uppercase;
+  }
+  else if (!confirmLowercase && !confirmUppercase && confirmNumeric && !confirmSpecial) {
+      choices = numeric;
+  }
+  // Created space variable to fill uppercase conversion
+  else if (!confirmLowercase && !confirmUppercase && !confirmNumeric && confirmSpecial) {
+      choices = special;
+  };
 // 4 confirms
 // WHEN prompted for character types to include in the password
 // THEN I choose lowercase, uppercase, numeric, and/or special characters
